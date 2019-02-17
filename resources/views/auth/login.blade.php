@@ -26,7 +26,7 @@
 
                 <div class="field">
                     <label for="password" class="label"> Kata Sandi: </label>
-                    <input placeholder="Kata Sandi" value="{{ old('password') }}" type="text" name="password" class="input {{ $errors->first("password", "is-danger") }}">
+                    <input placeholder="Kata Sandi" value="{{ old('password') }}" type="password" name="password" class="input {{ $errors->first("password", "is-danger") }}">
                     @if($errors->has("password"))
                     <p class="help is-danger"> {{ $errors->first("password") }} </p>
                     @endif

@@ -144,6 +144,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'username' => 'nama pengguna',
+        'password' => 'kata sandi'
+    ],
 
 ];
