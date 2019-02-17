@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('verified_case.index');
+    return redirect()->route('verified_case.index');
 });
 
 Auth::routes();
