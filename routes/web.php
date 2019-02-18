@@ -40,3 +40,7 @@ Route::group(['prefix' => '/unverified_case', 'as' => 'unverified_case.'], funct
 
     Route::post('/verify/{case_record}', 'CaseVerificationController@create')->name('verify');
 });
+
+Route::group(['prefix' => '/case_analysis', 'as' => 'case_analysis.'], function() {
+    Route::get('/show/{case_record}', 'CaseAnalysisController@show')->name('show');
+});

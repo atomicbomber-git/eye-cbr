@@ -63,6 +63,15 @@
                             </span>
                         </a>
 
+                        <a class="button is-dark is-small" href="{{ route('case_analysis.show', $case_record->id) }}">
+                            <span>
+                                Analisis
+                            </span>
+                            <span class="icon is-small">
+                                <i class="fa fa-calculator"></i>
+                            </span>
+                        </a>
+
                         <form class="d:i-b" method='POST' action='{{ route('unverified_case.verify', $case_record->id ) }}'>
                             @csrf
                             <button class="button is-success is-small">
