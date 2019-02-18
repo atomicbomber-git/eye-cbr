@@ -35,6 +35,7 @@ class CaseAnalysisController extends Controller
                     ->keyBy('feature_id');
 
                 $verified_case["distance"] = 0;
+                $verified_case["level"] = CaseRecord::LEVELS[$verified_case["level"]] ?? '-';
 
                 foreach ($verified_case["case_record_features"] as $case_record_feature) {
                     $verified_case["distance"] += 

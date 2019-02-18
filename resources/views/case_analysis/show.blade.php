@@ -84,7 +84,7 @@
                                 @endif
                             </td>
                             @endforeach
-                            <td> {{ $case_record["level"] }} </td>
+                            <td class="t-a:c"> {{ $case_record["level"] }} </td>
                             <td> {{ $case_record["distance"] }} </td>
                         </tr>
                         @endforeach
