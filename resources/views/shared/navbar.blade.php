@@ -19,21 +19,21 @@
         
         <div id="navbar" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item" href="">
+                <a class="navbar-item" href="{{ route('verified_case.index') }}">
                     <span class="icon">
-                        <i class="fa fa-home"></i>
+                        <i class="fa fa-archive"></i>
                     </span>
                     <span>
-                        Home
+                        Basis Kasus
                     </span>
                 </a>
 
                 <a class="navbar-item">
                     <span class="icon">
-                        <i class="fa fa-book"></i>
+                        <i class="fa fa-circle"></i>
                     </span>
                     <span>
-                        Docs
+                        Kasus Baru
                     </span>
                 </a>
             </div>
