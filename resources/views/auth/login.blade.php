@@ -2,7 +2,7 @@
 @section('title', 'Login')
 @section('content')
 
-<div class="container mt-5">
+<div class="container m-t:5">
     <div class="card" style="max-width: 25rem; margin-left: auto; margin-right: auto">
         <div class="card-header">
             <div class="card-header-title">
