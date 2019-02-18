@@ -29,8 +29,7 @@ class VerifiedCaseController extends Controller
                         })
                 ];
             });
-        
-            // return $case_records;
+
         return view('verified_case.index', compact('features', 'case_records'));
     }
 
