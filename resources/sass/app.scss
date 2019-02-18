@@ -7,3 +7,9 @@
 
 // Shed CSS
 @import "~shed-css/dist/index.css";
+
+// Turbolink Styling
+.turbolinks-progress-bar {
+    height: 3px;
+    background-color: green;
+}
