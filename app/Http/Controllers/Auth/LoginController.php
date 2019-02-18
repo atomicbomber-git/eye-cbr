@@ -36,6 +36,11 @@ class LoginController extends Controller
         return route('verified_case.index');
     }
 
+    public function loggedOut()
+    {
+        return redirect()->route('login');
+    }
+
     // Column to be used as username
     public function username()
     {

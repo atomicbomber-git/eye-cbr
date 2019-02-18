@@ -18,6 +18,7 @@
         </div>
         
         <div id="navbar" class="navbar-menu">
+            @auth
             <div class="navbar-start">
                 <a class="navbar-item" href="{{ route('verified_case.index') }}">
                     <span class="icon">
@@ -37,9 +38,11 @@
                     </span>
                 </a>
             </div>
+            @endauth
             
             <div class="navbar-end">
                 <div class="navbar-item">
+                    @auth
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button class="button is-danger">
@@ -51,6 +54,7 @@
                             </span>
                         </button>
                     </form>
+                    @endauth
                 </div>
             </div>
         </div>
