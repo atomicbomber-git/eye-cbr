@@ -67,6 +67,7 @@
                             {{ $value }}
                         </option>
                         @endforeach
+                        <option {{ old('level') === NULL ? 'selected' : '' }} value=""> - </option>
                     </select>
                 </div>
             </div>

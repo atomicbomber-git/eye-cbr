@@ -15,6 +15,17 @@
         Manajemen Kasus Baru
     </h1>
 
+    <div class="t-a:r m-y:3">
+        <a class="button is-dark" href="{{ route('unverified_case.create') }}">
+            <span>
+                Tambah Basis Kasus
+            </span>
+            <span class="icon is-small">
+                <i class="fa fa-plus"></i>
+            </span>
+        </a>
+    </div>
+
     <div style="overflow-x:auto">
         <table class="table is-bordered is-striped is-narrow is-hoverable">
             <thead>
@@ -22,6 +33,7 @@
                 @foreach ($features as $feature)
                 <th> {{ $feature->id }} </th>
                 @endforeach
+                <th> Tahapan </th>
                 <th class="t-a:m"> Kendali </th>
             </thead>
             <tbody>
@@ -38,6 +50,8 @@
                     </td>
                     @endforeach
                     
+                    <td> {{ $case_record->level }} </td>
+
                     <td class="t-a:m">
 
                         <a class="button is-dark is-small" href="{{ route('unverified_case.edit', $case_record->id) }}">

@@ -33,7 +33,7 @@ class VerifiedCaseController extends Controller
                 return (object) [
                     'id' => $case_record->id,
                     'verified' => $case_record->verified,
-                    'level' => CaseRecord::LEVELS[$case_record->level] ?? '',
+                    'level' => CaseRecord::LEVELS[$case_record->level] ?? '-',
                     'case_record_features' => $case_record->case_record_features
                         ->mapWithKeys(function ($case_record_feature) {
                             return [$case_record_feature->feature_id => $case_record_feature->value];

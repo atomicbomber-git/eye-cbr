@@ -22,7 +22,7 @@ class UnverifiedCaseController extends Controller
 
         $features = Feature::select('id')->get();
 
-        $case_records = CaseRecord::select('id', 'verified')
+        $case_records = CaseRecord::select('id', 'verified', 'level')
             ->with('case_record_features:id,feature_id,case_record_id,value')
             ->verified()
             ->orderByDesc('updated_at', 'created_at')
@@ -32,6 +32,7 @@ class UnverifiedCaseController extends Controller
             ->transform(function ($case_record) {
                 return (object) [
                     'id' => $case_record->id,
+                    'level' => CaseRecord::LEVELS[$case_record->level] ?? '-',
                     'verified' => $case_record->verified,
                     'case_record_features' => $case_record->case_record_features
                         ->mapWithKeys(function ($case_record_feature) {
@@ -45,10 +46,41 @@ class UnverifiedCaseController extends Controller
     
     public function create()
     {
+        $features = Feature::select('id', 'description')->get();
+        return view('unverified_case.create', compact('features'));
     }
     
     public function store()
-    {   
+    {
+        $data = $this->validate(request(), [
+            'level' => ['nullable', Rule::in(array_keys(CaseRecord::LEVELS))],
+            'case_record_features' => 'array',
+            'case_record_features.*.feature_id' => 'required|exists:features,id',
+            'case_record_features.*.value' => 'nullable'
+        ]);
+
+        DB::transaction(function () use($data) {
+            $case_record = CaseRecord::create([
+                'level' => $data['level'],
+                'verified' => 1
+            ]);
+
+            collect($data['case_record_features'])
+                ->each(function ($case_record_feature) use ($case_record) {
+                    CaseRecordFeature::create([
+                        'case_record_id' => $case_record->id,
+                        'feature_id' => $case_record_feature['feature_id'],
+                        'value' => isset($case_record_feature['value']) ? 1 : 0
+                    ]);
+                });
+        });
+
+        return redirect()
+            ->route('unverified_case.index')
+            ->with([
+                'message' => __('messages.create.success'),
+                'message_state' => 'success'
+            ]);
     }
     
     public function edit(CaseRecord $case_record)
@@ -73,7 +105,7 @@ class UnverifiedCaseController extends Controller
     public function update(CaseRecord $case_record)
     {
         $data = $this->validate(request(), [
-            'level' => ['required', Rule::in(array_keys(CaseRecord::LEVELS))],
+            'level' => ['nullable', Rule::in(array_keys(CaseRecord::LEVELS))],
             'case_record_features' => 'array',
             'case_record_features.*.feature_id' => 'required|exists:features,id',
             'case_record_features.*.value' => 'nullable'
