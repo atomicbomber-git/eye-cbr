@@ -51,6 +51,25 @@
                 </div>
 
                 @endforeach
+
+            <h2 class="title is-4 m-t:4">
+                Data Kasus
+            </h2>
+
+            <div class="field">
+                <label for="level" class="label"> Tahapan: </label>
+                <div id="level" class="select">
+                    <select name="level">
+                        @foreach (App\CaseRecord::LEVELS as $key => $value)
+                        <option 
+                            {{ old('level', $case_record->level) === $key ? 'selected' : '' }}
+                            value="{{ $key }}">
+                            {{ $value }}
+                        </option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
             
             <div class="t-a:r">
                 <button class="button is-primary">

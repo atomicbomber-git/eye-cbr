@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rule;
 use App\Feature;
 use App\CaseRecord;
 use App\CaseRecordFeature;
@@ -56,6 +57,7 @@ class UnverifiedCaseController extends Controller
 
         $case_record = (object) [
             'id' => $case_record->id,
+            'level' => $case_record->level,
             'verified' => $case_record->verified,
             'case_record_features' => $case_record->case_record_features
                 ->mapWithKeys(function ($case_record_feature) {
@@ -71,12 +73,15 @@ class UnverifiedCaseController extends Controller
     public function update(CaseRecord $case_record)
     {
         $data = $this->validate(request(), [
+            'level' => ['required', Rule::in(array_keys(CaseRecord::LEVELS))],
             'case_record_features' => 'array',
             'case_record_features.*.feature_id' => 'required|exists:features,id',
             'case_record_features.*.value' => 'nullable'
         ]);
         
         DB::transaction(function () use ($data, $case_record) {
+            $case_record->level = $data['level'];
+            $case_record->save();
             $case_record->case_record_features()->delete();
 
             collect($data['case_record_features'])
