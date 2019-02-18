@@ -14,4 +14,9 @@ class CaseRecord extends Model
     {
         return $this->hasMany(CaseRecordFeature::class);
     }
+
+    public function scopeVerified($query)
+    {
+        $query->where('verified', 1);
+    }
 }
