@@ -31,12 +31,18 @@
     <div style="overflow-x:auto">
         <table class="table is-bordered is-striped is-narrow is-hoverable">
             <thead>
-                <th> No. </th>
-                @foreach($features as $feature)
-                <th> {{ $feature->id }} </th>
-                @endforeach
-                <th> Tahapan </th>
-                <th class="has-text-centered"> Kendali </th>
+                <tr>
+                    <th rowspan="2" style="vertical-align: middle"> No. </th>
+                    <th colspan="{{ $features->count() }}" class="has-text-centered"> Gejala </th>
+                    <th rowspan="2" style="vertical-align: middle"> Tahapan </th>
+                    <th rowspan="2" style="vertical-align: middle" class="has-text-centered"> Kendali </th>
+                </tr>
+
+                <tr>
+                    @foreach($features as $feature)
+                    <th> {{ $feature->id }} </th>
+                    @endforeach
+                </tr>
             </thead>
             <tbody>
                 @foreach ($case_records as $case_record)
@@ -51,7 +57,7 @@
                         @endif
                     </td>
                     @endforeach
-                    <td> {{ $case_record->level }} </td>
+                    <td class="t-a:c"> {{ $case_record->level }} </td>
                     <td class="has-text-centered" style="white-space : nowrap;">
 
                         <a href="{{ route('verified_case.edit', $case_record->id) }}" class="button is-dark is-small">
