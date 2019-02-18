@@ -13,8 +13,10 @@ class FeatureSeeder extends Seeder
      */
     public function run()
     {
-        DB::transaction(function() {
-            factory(Feature::class, 30)
+        $feature_count = (int) $this->command->ask("How many features do you want to be seeded?");
+
+        DB::transaction(function() use($feature_count) {
+            factory(Feature::class, $feature_count)
                 ->create();
         });
     }

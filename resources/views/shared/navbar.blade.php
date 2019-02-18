@@ -29,7 +29,7 @@
                     </span>
                 </a>
 
-                <a class="navbar-item">
+                <a class="navbar-item" href="{{ route('unverified_case.index') }}">
                     <span class="icon">
                         <i class="fa fa-circle"></i>
                     </span>
