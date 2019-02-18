@@ -4,6 +4,13 @@
 
 <div class="container p-x:5 m-y:5">
 
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li> <a href="#"> {{ config('app.name') }} </a> </li>
+            <li class="is-active"><a href="{{ route('verified_case.index') }}" aria-current="page"> Manajemen Basis Kasus </a></li>
+        </ul>
+    </nav>
+
     <h1 class="title">
         Manajemen Basis Kasus
     </h1>
