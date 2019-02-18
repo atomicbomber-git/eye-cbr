@@ -35,6 +35,7 @@
                 @foreach($features as $feature)
                 <th> {{ $feature->id }} </th>
                 @endforeach
+                <th> Tahapan </th>
                 <th class="has-text-centered"> Kendali </th>
             </thead>
             <tbody>
@@ -50,6 +51,7 @@
                         @endif
                     </td>
                     @endforeach
+                    <td> {{ $case_record->level }} </td>
                     <td class="has-text-centered">
 
                         <a href="{{ route('verified_case.edit', $case_record->id) }}" class="button is-dark is-small">

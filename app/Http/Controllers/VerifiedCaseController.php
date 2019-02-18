@@ -16,7 +16,7 @@ class VerifiedCaseController extends Controller
 
         $features = Feature::select('id')->get();
 
-        $case_records = CaseRecord::select('id', 'verified')
+        $case_records = CaseRecord::select('id', 'verified', 'level')
             ->with('case_record_features:id,feature_id,case_record_id,value')
             ->verified()
             ->orderByDesc('updated_at', 'created_at')
@@ -27,6 +27,7 @@ class VerifiedCaseController extends Controller
                 return (object) [
                     'id' => $case_record->id,
                     'verified' => $case_record->verified,
+                    'level' => CaseRecord::LEVELS[$case_record->level],
                     'case_record_features' => $case_record->case_record_features
                         ->mapWithKeys(function ($case_record_feature) {
                             return [$case_record_feature->feature_id => $case_record_feature->value];

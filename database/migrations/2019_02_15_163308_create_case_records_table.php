@@ -16,6 +16,7 @@ class CreateCaseRecordsTable extends Migration
         Schema::create('case_records', function (Blueprint $table) {
             $table->increments('id');
             $table->tinyInteger('verified');
+            $table->string('level')->nullable();
             $table->timestamps();
         });
     }

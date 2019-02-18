@@ -10,6 +10,12 @@ class CaseRecord extends Model
         'verified'
     ];
 
+    const LEVELS = [
+        'RINGAN' => 'Ringan',
+        'SEDANG' => 'Sedang',
+        'PARAH' => 'Parah'
+    ];
+
     public function case_record_features()
     {
         return $this->hasMany(CaseRecordFeature::class);
