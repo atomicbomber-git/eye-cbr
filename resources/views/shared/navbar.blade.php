@@ -6,7 +6,7 @@
                     <i class="fa fa-icon"></i>
                 </span>
                 <span>
-                    Eye CBR
+                    {{ config('app.name') }}
                 </span>
             </a>
 
