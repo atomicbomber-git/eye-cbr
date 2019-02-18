@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class CaseRecord extends Model
 {
     public $fillable = [
-        'verified'
+        'verified', 'level'
     ];
 
     const LEVELS = [

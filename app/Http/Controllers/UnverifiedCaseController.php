@@ -10,6 +10,11 @@ use App\CaseRecordFeature;
 
 class UnverifiedCaseController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         session(['page' => request('page')]);
