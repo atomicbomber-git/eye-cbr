@@ -40,7 +40,15 @@
                     </td>
                     @endforeach
                     <td class="has-text-centered">
-                        <form method="POST" action="{{ route('verified_case.delete', $case_record->id) }}">
+
+                        <a href="{{ route('verified_case.edit', $case_record->id) }}" class="button is-dark is-small">
+                            <span> Ubah </span>
+                            <span class="icon is-small">
+                                <i class="fa fa-pencil"></i>
+                            </span>
+                        </a>
+
+                        <form class="d:i-b" method="POST" action="{{ route('verified_case.delete', $case_record->id) }}">
                             @csrf
                             <button class="button is-danger is-small">
                                 <span>

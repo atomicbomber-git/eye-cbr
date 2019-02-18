@@ -23,7 +23,7 @@ Route::group(['prefix' => '/verified_case', 'as' => 'verified_case.'], function(
     Route::get('/index', 'VerifiedCaseController@index')->name('index');
     Route::get('/create', 'VerifiedCaseController@create')->name('create');
     Route::post('/store', 'VerifiedCaseController@store')->name('store');
-    Route::get('/edit/{verified_case}', 'VerifiedCaseController@edit')->name('edit');
-    Route::post('/update/{verified_case}', 'VerifiedCaseController@update')->name('update');
-    Route::post('/delete/{verified_case}', 'VerifiedCaseController@delete')->name('delete');
+    Route::get('/edit/{case_record}', 'VerifiedCaseController@edit')->name('edit');
+    Route::post('/update/{case_record}', 'VerifiedCaseController@update')->name('update');
+    Route::post('/delete/{case_record}', 'VerifiedCaseController@delete')->name('delete');
 });
