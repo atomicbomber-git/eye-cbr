@@ -52,7 +52,7 @@
                     </td>
                     @endforeach
                     <td> {{ $case_record->level }} </td>
-                    <td class="has-text-centered">
+                    <td class="has-text-centered" style="white-space : nowrap;">
 
                         <a href="{{ route('verified_case.edit', $case_record->id) }}" class="button is-dark is-small">
                             <span> Ubah </span>

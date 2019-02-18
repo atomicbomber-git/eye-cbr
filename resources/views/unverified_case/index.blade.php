@@ -52,7 +52,7 @@
                     
                     <td> {{ $case_record->level }} </td>
 
-                    <td class="t-a:m">
+                    <td class="t-a:m" style="white-space : nowrap;">
 
                         <a class="button is-dark is-small" href="{{ route('unverified_case.edit', $case_record->id) }}">
                             <span>
