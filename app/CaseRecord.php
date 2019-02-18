@@ -25,4 +25,9 @@ class CaseRecord extends Model
     {
         $query->where('verified', 1);
     }
+
+    public function scopeUnverified($query)
+    {
+        $query->where('verified', 0);
+    }
 }

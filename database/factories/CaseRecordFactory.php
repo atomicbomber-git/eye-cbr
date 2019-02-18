@@ -8,3 +8,12 @@ $factory->define(App\CaseRecord::class, function (Faker $faker) {
         'verified' => rand(0, 1)
     ];
 });
+
+$factory->state(App\CaseRecord::class, 'verified', [
+    'verified' => 1,
+]);
+
+$factory->state(App\CaseRecord::class, 'unverified', [
+    'verified' => 0,
+    'level' => NULL,
+]);
