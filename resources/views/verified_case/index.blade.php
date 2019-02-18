@@ -17,6 +17,17 @@
         Manajemen Basis Kasus
     </h1>
 
+    <div class="t-a:r m-y:3">
+        <a class="button is-dark" href="{{ route('verified_case.create') }}">
+            <span>
+                Tambah Basis Kasus
+            </span>
+            <span class="icon is-small">
+                <i class="fa fa-plus"></i>
+            </span>
+        </a>
+    </div>
+
     <div style="overflow-x:auto">
         <table class="table is-bordered is-striped is-narrow is-hoverable block">
             <thead>

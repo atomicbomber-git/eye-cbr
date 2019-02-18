@@ -18,6 +18,7 @@ class VerifiedCaseController extends Controller
 
         $case_records = CaseRecord::select('id', 'verified')
             ->with('case_record_features:id,feature_id,case_record_id,value')
+            ->orderByDesc('created_at')
             ->paginate(config('pagination.default'));
 
         $case_records->getCollection()
@@ -37,10 +38,37 @@ class VerifiedCaseController extends Controller
 
     public function create()
     {
+        $features = Feature::select('id', 'description')->get();
+        return view('verified_case.create', compact('features'));
     }
 
     public function store()
     {
+        $data = $this->validate(request(), [
+            'case_record_features' => 'array',
+            'case_record_features.*.feature_id' => 'required|exists:features,id',
+            'case_record_features.*.value' => 'nullable'
+        ]);
+
+        DB::transaction(function () use($data) {
+            $case_record = CaseRecord::create(['verified' => 1]);
+
+            collect($data['case_record_features'])
+                ->each(function ($case_record_feature) use ($case_record) {
+                    CaseRecordFeature::create([
+                        'case_record_id' => $case_record->id,
+                        'feature_id' => $case_record_feature['feature_id'],
+                        'value' => isset($case_record_feature['value']) ? 1 : 0
+                    ]);
+                });
+        });
+
+        return redirect()
+            ->route('verified_case.index')
+            ->with([
+                'message' => __('messages.create.success'),
+                'message_state' => 'success'
+            ]);
     }
     
     public function edit(CaseRecord $case_record)
