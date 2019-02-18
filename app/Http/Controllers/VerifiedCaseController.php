@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\CaseRecord;
-use App\Http\Resources\CaseRecord as CaseRecordResource;
 use App\Feature;
-use Spatie\QueryBuilder\QueryBuilder;
 
 class VerifiedCaseController extends Controller
 {
@@ -51,5 +50,15 @@ class VerifiedCaseController extends Controller
     
     public function delete(CaseRecord $verified_case)
     {
+        DB::transaction(function() use($verified_case) {
+            $verified_case->case_record_features()->delete();
+            $verified_case->delete();
+        });
+
+        return back()
+            ->with([
+                'message' => __('messages.delete.success'),
+                'message_state' => 'success'
+            ]);
     }
 }

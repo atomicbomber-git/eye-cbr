@@ -4,6 +4,8 @@
 
 <div class="container p-x:5 m-y:5">
 
+    @include('shared.message')
+
     <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
             <li> <a href="#"> {{ config('app.name') }} </a> </li>
