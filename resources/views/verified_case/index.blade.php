@@ -59,6 +59,19 @@
                             </span>
                         </a>
 
+                        <form class="d:i-b" method='POST' action='{{ route('verified_case.unverify', $case_record->id) }}'>
+                            @csrf
+                        
+                            <button class="button is-warning is-small">
+                                <span>
+                                    H. Verifikasi
+                                </span>
+                                <span class="icon is-small">
+                                    <i class="fa fa-times"></i>
+                                </span>
+                            </button>
+                        </form>
+
                         <form class="d:i-b" method="POST" action="{{ route('verified_case.delete', $case_record->id) }}">
                             @csrf
                             <button class="button is-danger is-small">

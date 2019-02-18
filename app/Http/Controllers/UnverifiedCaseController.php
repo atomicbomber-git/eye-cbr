@@ -18,7 +18,7 @@ class UnverifiedCaseController extends Controller
         $case_records = CaseRecord::select('id', 'verified')
             ->with('case_record_features:id,feature_id,case_record_id,value')
             ->verified()
-            ->orderByDesc('created_at')
+            ->orderByDesc('updated_at', 'created_at')
             ->paginate(config('pagination.default'));
 
         $case_records->getCollection()

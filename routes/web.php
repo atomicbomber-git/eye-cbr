@@ -26,6 +26,8 @@ Route::group(['prefix' => '/verified_case', 'as' => 'verified_case.'], function(
     Route::get('/edit/{case_record}', 'VerifiedCaseController@edit')->name('edit');
     Route::post('/update/{case_record}', 'VerifiedCaseController@update')->name('update');
     Route::post('/delete/{case_record}', 'VerifiedCaseController@delete')->name('delete');
+
+    Route::post('/unverify/{case_record}', 'CaseVerificationController@delete')->name('unverify');
 });
 
 Route::group(['prefix' => '/unverified_case', 'as' => 'unverified_case.'], function() {

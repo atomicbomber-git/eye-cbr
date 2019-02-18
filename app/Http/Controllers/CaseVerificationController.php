@@ -19,4 +19,17 @@ class CaseVerificationController extends Controller
                 'message_state' => 'success'
             ]);
     }
+
+    public function delete(CaseRecord $case_record)
+    {
+        $case_record->verified = 0;
+        $case_record->save();
+
+        return redirect()
+            ->route('unverified_case.index')
+            ->with([
+                'message' => __('messages.update.success'),
+                'message_state' => 'success'
+            ]);
+    }
 }

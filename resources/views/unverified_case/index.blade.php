@@ -53,7 +53,7 @@
                             @csrf
                             <button class="button is-success is-small">
                                 <span>
-                                    Verifikasi
+                                    Batalkan Verifikasi
                                 </span>
                                 <span class="icon is-small">
                                     <i class="fa fa-check"></i>
