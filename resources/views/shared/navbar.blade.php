@@ -37,6 +37,15 @@
                         Kasus Baru
                     </span>
                 </a>
+
+                <a class="navbar-item" href="{{ route('feature.index') }}">
+                    <span class="icon">
+                        <i class="fa fa-list-alt"></i>
+                    </span>
+                    <span>
+                        Gejala
+                    </span>
+                </a>
             </div>
             @endauth
             

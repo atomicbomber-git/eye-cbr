@@ -44,3 +44,7 @@ Route::group(['prefix' => '/unverified_case', 'as' => 'unverified_case.'], funct
 Route::group(['prefix' => '/case_analysis', 'as' => 'case_analysis.'], function() {
     Route::get('/show/{case_record}', 'CaseAnalysisController@show')->name('show');
 });
+
+Route::group(['prefix' => '/feature', 'as' => 'feature.'], function() {
+    Route::get('/index', 'FeatureController@index')->name('index');
+});
