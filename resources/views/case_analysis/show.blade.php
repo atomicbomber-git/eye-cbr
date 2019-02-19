@@ -51,7 +51,7 @@
                 <span class="icon">
                     <i class="fa fa-archive"></i>
                 </span>
-                Kasus Lain dengan Nilai Similaritas Tertinggi
+                Kasus Lain dengan Jarak <em> Euclidean </em> Terdekat
             </h1>
         </div>
         <div class="card-content">
@@ -62,7 +62,7 @@
                             <th rowspan="2" style="vertical-align: middle"> No. </th>
                             <th colspan="{{ $features->count() }}" class="has-text-centered"> Gejala </th>
                             <th rowspan="2" style="vertical-align: middle"> Tahapan </th>
-                            <th rowspan="2" style="vertical-align: middle" class="has-text-centered"> Kendali </th>
+                            <th rowspan="2" style="vertical-align: middle" class="has-text-centered"> Jarak <em> Euclidean </em> </th>
                         </tr>
         
                         <tr>
