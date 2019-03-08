@@ -16,7 +16,7 @@
     </h1>
 
     <div style="overflow-x:auto">
-        <table class="table is-bordered is-striped is-narrow is-hoverable block">
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth block">
             <thead>
                 <th> # </th>
                 <th> Gejala </th>

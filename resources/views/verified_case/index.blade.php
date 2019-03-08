@@ -29,7 +29,7 @@
     </div>
 
     <div style="overflow-x:auto">
-        <table class="table is-bordered is-striped is-narrow is-hoverable">
+        <table class="table is-bordered is-striped is-narrow is-fullwidth is-hoverable">
             <thead>
                 <tr>
                     <th rowspan="2" style="vertical-align: middle"> No. </th>
