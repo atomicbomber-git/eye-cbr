@@ -4,16 +4,15 @@
 
 <div class="container p-x:5 m-y:5">
     @include('shared.message')
-    <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li> <a href="#"> {{ config('app.name') }} </a> </li>
-            <li><a href="{{ route('unverified_case.index', ['page' => session('page')]) }}"> Manajemen Kasus Baru </a></li>
-            <li class="is-active"><a href="{{ route('unverified_case.create') }}" aria-current="page"> Tambah Kasus Baru </a></li>
-        </ul>
-    </nav>
     
     <h1 class="title">
-        Tambah Kasus Baru
+        <a href="{{ route("unverified_case.index") }}">
+            Manajemen Kasus Baru
+        </a>
+
+        /
+
+        Tambah
     </h1>
     
     <div class="card">
@@ -58,12 +57,12 @@
                 </h2>
                 
                 <div class="field">
-                    <label for="level" class="label"> Tahapan: </label>
-                    <div id="level" class="select">
-                        <select name="level">
-                            @foreach (App\CaseRecord::LEVELS as $key => $value)
+                    <label for="diagnosis" class="label"> Hasil Diagnosis: </label>
+                    <div id="diagnosis" class="select">
+                        <select name="diagnosis">
+                            @foreach (App\Kasus::HASIL_DIAGNOSIS as $key => $value)
                             <option 
-                                {{ old('level') === $key ? 'selected' : '' }}
+                                {{ old('') === $key ? 'selected' : '' }}
                                 value="{{ $key }}">
                                 {{ $value }}
                             </option>

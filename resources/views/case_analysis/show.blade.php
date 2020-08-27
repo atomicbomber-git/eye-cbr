@@ -4,16 +4,15 @@
 
 <div class="container p-x:5 m-y:5">
     @include('shared.message')
-    <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li> <a href="#"> {{ config('app.name') }} </a> </li>
-            <li> <a href="{{ route('unverified_case.index', ['page' => session('page')]) }}" aria-current="page"> Manajemen Kasus Baru </a></li>
-            <li class="is-active"><a href="{{ route('verified_case.index') }}" aria-current="page"> Analisis Kasus Baru </a></li>
-        </ul>
-    </nav>
 
     <h1 class="title">
-        Analisis Kasus Baru
+        <a href="{{ route("unverified_case.index") }}">
+            Manajemen Kasus Baru
+        </a>
+
+        /
+
+        Analisis
     </h1>
 
     <div class="card m-b:3">
@@ -51,7 +50,7 @@
                 <span class="icon">
                     <i class="fa fa-archive"></i>
                 </span>
-                Kasus Lain dengan Jarak <em> Euclidean </em> Terdekat
+                Kasus Lain dengan Jarak Euclidean Terdekat
             </h1>
         </div>
         <div class="card-content">
@@ -61,7 +60,7 @@
                         <tr>
                             <th rowspan="2" style="vertical-align: middle"> No. </th>
                             <th colspan="{{ $features->count() }}" class="has-text-centered"> Gejala </th>
-                            <th rowspan="2" style="vertical-align: middle"> Tahapan </th>
+                            <th rowspan="2" style="vertical-align: middle"> Hasil Diagnosis </th>
                             <th rowspan="2" style="vertical-align: middle" class="has-text-centered"> Jarak <em> Euclidean </em> </th>
                         </tr>
         
@@ -84,7 +83,7 @@
                                 @endif
                             </td>
                             @endforeach
-                            <td class="t-a:c"> {{ $case_record["level"] }} </td>
+                            <td class="t-a:c"> {{ $case_record["diagnosis"] }} </td>
                             <td> {{ $case_record["distance"] }} </td>
                         </tr>
                         @endforeach

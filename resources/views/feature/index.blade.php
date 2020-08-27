@@ -6,7 +6,7 @@
     @include('shared.message')
     <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-            <li> <a href="#"> {{ config('app.name') }} </a> </li>
+
             <li class="is-active"><a href="{{ route('feature.index') }}" aria-current="page"> Daftar Gejala </a></li>
         </ul>
     </nav>

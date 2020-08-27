@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\CaseRecord;
+use App\Kasus;
 
 class CaseVerificationController extends Controller
 {
-    public function create(CaseRecord $case_record)
+    public function create(Kasus $case_record)
     {
         $case_record->verified = 1;
         $case_record->save();
@@ -20,7 +20,7 @@ class CaseVerificationController extends Controller
             ]);
     }
 
-    public function delete(CaseRecord $case_record)
+    public function delete(Kasus $case_record)
     {
         $case_record->verified = 0;
         $case_record->save();

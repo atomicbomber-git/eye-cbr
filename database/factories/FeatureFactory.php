@@ -2,9 +2,9 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Feature::class, function (Faker $faker) {
+$factory->define(App\Gejala::class, function (Faker $faker) {
     return [
-        'description' => $faker->sentence,
+        'description' => 'Gejala ' . $faker->index,
         'weight' => 1.0,
     ];
 });

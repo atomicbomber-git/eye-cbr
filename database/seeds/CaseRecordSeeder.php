@@ -2,8 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use App\CaseRecord;
-use App\Feature;
+use App\Kasus;
+use App\Gejala;
 use App\CaseRecordFeature;
 
 class CaseRecordSeeder extends Seeder
@@ -20,13 +20,13 @@ class CaseRecordSeeder extends Seeder
 
         DB::transaction(function() use($verified_cases_count, $unverified_cases_count) {
             
-            $features = Feature::select('id')->get();
+            $features = Gejala::select('id')->get();
 
-            $verified_cases = factory(CaseRecord::class, $verified_cases_count)
+            $verified_cases = factory(Kasus::class, $verified_cases_count)
                 ->states('verified')
                 ->create();
 
-            $unverified_cases = factory(CaseRecord::class, $unverified_cases_count)
+            $unverified_cases = factory(Kasus::class, $unverified_cases_count)
                 ->states('unverified')
                 ->create();
 

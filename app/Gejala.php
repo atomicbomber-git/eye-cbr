@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Feature extends Model
+class Gejala extends Model
 {
-    //
+    protected $table = "features";
 }

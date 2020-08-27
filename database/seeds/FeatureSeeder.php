@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use App\Feature;
+use App\Gejala;
 
 class FeatureSeeder extends Seeder
 {
@@ -16,7 +16,7 @@ class FeatureSeeder extends Seeder
         $feature_count = (int) $this->command->ask("How many features do you want to be seeded?");
 
         DB::transaction(function() use($feature_count) {
-            factory(Feature::class, $feature_count)
+            factory(Gejala::class, $feature_count)
                 ->create();
         });
     }

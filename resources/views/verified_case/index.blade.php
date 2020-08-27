@@ -6,13 +6,6 @@
 
     @include('shared.message')
 
-    <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li> <a href="#"> {{ config('app.name') }} </a> </li>
-            <li class="is-active"><a href="{{ route('verified_case.index') }}" aria-current="page"> Manajemen Basis Kasus </a></li>
-        </ul>
-    </nav>
-
     <h1 class="title">
         Manajemen Basis Kasus
     </h1>
@@ -34,7 +27,7 @@
                 <tr>
                     <th rowspan="2" style="vertical-align: middle"> No. </th>
                     <th colspan="{{ $features->count() }}" class="has-text-centered"> Gejala </th>
-                    <th rowspan="2" style="vertical-align: middle"> Tahapan </th>
+                    <th rowspan="2" style="vertical-align: middle; text-align: center"> Hasil Diagnosis </th>
                     <th rowspan="2" style="vertical-align: middle" class="has-text-centered"> Kendali </th>
                 </tr>
 
@@ -57,7 +50,7 @@
                         @endif
                     </td>
                     @endforeach
-                    <td class="t-a:c"> {{ $case_record->level }} </td>
+                    <td class="t-a:c"> {{ $case_record->diagnosis }} </td>
                     <td class="has-text-centered" style="white-space : nowrap;">
 
                         <a href="{{ route('verified_case.edit', $case_record->id) }}" class="button is-dark is-small">
@@ -69,7 +62,7 @@
 
                         <form class="d:i-b" method='POST' action='{{ route('verified_case.unverify', $case_record->id) }}'>
                             @csrf
-                        
+
                             <button class="button is-warning is-small">
                                 <span>
                                     H. Verifikasi
