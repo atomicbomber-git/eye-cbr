@@ -25,15 +25,15 @@
         <table class="table is-bordered is-striped is-narrow is-fullwidth is-hoverable">
             <thead>
                 <tr>
-                    <th rowspan="2" style="vertical-align: middle"> No. </th>
-                    <th colspan="{{ $features->count() }}" class="has-text-centered"> Gejala </th>
-                    <th rowspan="2" style="vertical-align: middle; text-align: center"> Hasil Diagnosis </th>
-                    <th rowspan="2" style="vertical-align: middle" class="has-text-centered"> Kendali </th>
+                    <th class="has-text-centered" style="vertical-align: middle" rowspan="2"> No. </th>
+                    <th class="has-text-centered" style="vertical-align: middle" colspan="{{ $features->count() }}" > Gejala </th>
+                    <th class="has-text-centered" style="vertical-align: middle" rowspan="2"> Hasil Diagnosis </th>
+                    <th class="has-text-centered" style="vertical-align: middle" rowspan="2"> Kendali </th>
                 </tr>
 
                 <tr>
                     @foreach($features as $feature)
-                    <th> {{ $feature->id }} </th>
+                    <th class="has-text-centered" style="vertical-align: middle"> {{ $feature->id }} </th>
                     @endforeach
                 </tr>
             </thead>
@@ -42,7 +42,7 @@
                 <tr>
                     <td> {{ $case_records->firstItem() + $loop->index }}. </td>
                     @foreach($features as $feature)
-                    <td class="v-a:m">
+                    <td class="has-text-centered" style="vertical-align: middle">
                         @if($case_record->case_record_features[$feature->id])
                         <i class="has-text-success fa fa-check"></i>
                         @else
