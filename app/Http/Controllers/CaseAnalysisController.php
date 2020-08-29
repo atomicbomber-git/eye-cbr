@@ -22,7 +22,7 @@ class CaseAnalysisController extends Controller
                 })
         ];
 
-        $features = Gejala::select('id', 'weight', 'description')->get()->keyBy('id');
+        $features = Gejala::query()->select('id', 'weight', 'description')->get()->keyBy('id');
 
         $case_records = Kasus::query()
             ->verified()
@@ -32,17 +32,19 @@ class CaseAnalysisController extends Controller
                 $verified_case = collect($verified_case);
 
                 $verified_case["case_record_features"] = collect($verified_case["case_record_features"])
-                    ->keyBy('feature_id');
+                    ->keyBy('feature_id')
+                    ->toArray();
 
-                $verified_case["distance"] = 0;
                 $verified_case["diagnosis"] = Kasus::HASIL_DIAGNOSIS[$verified_case["diagnosis"]] ?? '-';
 
-                foreach ($verified_case["case_record_features"] as $case_record_feature) {
-                    $verified_case["distance"] += 
-                        pow($case_record_feature["value"] - $case_record->case_record_features[$case_record_feature["feature_id"]], 2);
-                }
+                $verified_case["distance"] = sqrt(array_reduce($verified_case["case_record_features"], function ($sum, $case_record_feature) use ($case_record) {
+                    return $sum +
+                        pow((
+                            $case_record_feature["value"] -
+                            $case_record->case_record_features[$case_record_feature["feature_id"]]
+                        ), 2);
+                }, 0));
 
-                $verified_case["distance"] = sqrt($verified_case["distance"]);
                 return $verified_case;
             })
             ->sortBy('distance')
