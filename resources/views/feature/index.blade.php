@@ -4,12 +4,6 @@
 
 <div class="container p-x:5 m-y:5">
     @include('shared.message')
-    <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-
-            <li class="is-active"><a href="{{ route('feature.index') }}" aria-current="page"> Daftar Gejala </a></li>
-        </ul>
-    </nav>
 
     <h1 class="title">
         Daftar Gejala

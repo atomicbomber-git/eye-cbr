@@ -4,16 +4,15 @@
 
 <div class="container p-x:5 m-y:5">
     @include('shared.message')
-    <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-
-            <li> <a href="{{ route('verified_case.index', ['page' => session('page')]) }}"> Manajemen Basis Kasus </a> </li>
-            <li class="is-active"><a href="" aria-current="page"> Ubah Basis Kasus </a></li>
-        </ul>
-    </nav>
 
     <h1 class="title">
-        Ubah Basis Kasus
+        <a href="{{ route("verified_case.index") }}">
+            Manajemen Basis Kasus
+        </a>
+
+        /
+
+        Ubah
     </h1>
 
     <div class="card">
