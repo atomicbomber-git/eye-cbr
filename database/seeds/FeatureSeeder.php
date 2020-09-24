@@ -1,11 +1,32 @@
 <?php
 
+use App\Gejala;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use App\Gejala;
 
 class FeatureSeeder extends Seeder
 {
+    const FEATURE_NAMES = [
+        "Kabur",
+        "Mengalami penurunan tajam penglihatan",
+        "Mengalami nyeri kepala",
+        "Mengalami mata merah",
+        "Pandangan tampak ganda",
+        "Silau",
+        "Mengalami mata perih",
+        "Tajam penglihatan tidak terganggu",
+        "Penglihatan jarak jauh buram",
+        "Penglihatan jarak dekat baik",
+        "Terdapat benjolan pada kelopak mata",
+        "Tampak kemerahan pada kelopak mata",
+        "Mengalami mata berair",
+        "Mengalami mata gatal",
+        "Pandangan seperti berkabut",
+        "Merasa seperti ada bayangan hitam",
+        "Merasa lengket di sekitar bola mata",
+        "Mengalami bengkak",
+    ];
+
     /**
      * Run the database seeds.
      *
@@ -13,11 +34,15 @@ class FeatureSeeder extends Seeder
      */
     public function run()
     {
-        $feature_count = (int) $this->command->ask("How many features do you want to be seeded?");
+        DB::beginTransaction();
 
-        DB::transaction(function() use($feature_count) {
-            factory(Gejala::class, $feature_count)
-                ->create();
-        });
+        foreach (self::FEATURE_NAMES as $feature_name) {
+            Gejala::query()->create([
+                "description" => $feature_name,
+                "weight" => 1.0,
+            ]);
+        }
+
+        DB::commit();
     }
 }
