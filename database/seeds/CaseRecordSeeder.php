@@ -58,7 +58,7 @@ class CaseRecordSeeder extends Seeder
 
         foreach (self::BASE_CASES as $baseCase) {
             $features = $baseCase[0];
-            $diagnosis = $baseCase[1];
+            $diagnosis = strtoupper($baseCase[1]);
 
             $case_record = Kasus::query()->create([
                 "diagnosis" => $diagnosis,

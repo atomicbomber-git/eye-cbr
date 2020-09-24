@@ -22,7 +22,7 @@ class VerifiedCaseController extends Controller
 
         $features = Gejala::select('id')->get();
 
-        $case_records = Kasus::select('id', 'verified', 'diagnosis')
+        $case_records = Kasus::query()->select('id', 'verified', 'diagnosis')
             ->with('case_record_features:id,feature_id,case_record_id,value')
             ->verified()
             ->orderByDesc('updated_at', 'created_at')

@@ -62,7 +62,7 @@ class UnverifiedCaseController extends Controller
         DB::transaction(function () use($data) {
             $case_record = Kasus::create([
                 'diagnosis' => $data['diagnosis'],
-                'verified' => 1
+                'verified' => 0
             ]);
 
             collect($data['case_record_features'])

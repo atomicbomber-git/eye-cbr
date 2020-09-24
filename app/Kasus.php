@@ -14,7 +14,7 @@ class Kasus extends Model
         'KATARAK' => 'Katarak',
         'KONJUNGTIVITIS' => 'Konjungtivitis',
         'MIOPI' => 'Miopi',
-        'HORDOLEUM' => 'Hordoleum',
+        'HORDEOLUM' => 'Hordeolum',
     ];
 
     public function case_record_features()
