@@ -22,10 +22,28 @@
                 @guest
                     <a class="navbar-item" href="{{ route('konsultasi.create') }}">
                         <span class="icon">
-                            <i class="fa fa-circle"></i>
+                            <i class="fa fa-check-circle-o"></i>
                         </span>
                             <span>
                             Konsultasi
+                        </span>
+                    </a>
+
+                    <a class="navbar-item" href="{{ route('bantuan') }}">
+                        <span class="icon">
+                            <i class="fa fa-question-circle"></i>
+                        </span>
+                        <span>
+                            Bantuan
+                        </span>
+                    </a>
+
+                    <a class="navbar-item" href="{{ route('tentang-saya') }}">
+                        <span class="icon">
+                            <i class="fa fa-info-circle"></i>
+                        </span>
+                        <span>
+                            Tentang Saya
                         </span>
                     </a>
                 @endguest

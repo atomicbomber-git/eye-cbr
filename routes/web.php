@@ -11,16 +11,18 @@
 |
 */
 
+use App\Http\Controllers\BantuanController;
 use App\Http\Controllers\CaseAnalysisController;
 use App\Http\Controllers\CaseVerificationController;
 use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\FeatureController;
+use App\Http\Controllers\TentangSayaController;
 use App\Http\Controllers\UnverifiedCaseController;
 use App\Http\Controllers\VerifiedCaseController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return redirect()->route('verified_case.index');
+    return redirect()->route('konsultasi.create');
 });
 
 Auth::routes();
@@ -29,6 +31,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('konsultasi', class_basename(KonsultasiController::class))
     ->parameter('konsultasi', 'kasus');
+
+Route::get('bantuan', class_basename(BantuanController::class))->name('bantuan');
+Route::get('tentang-saya', class_basename(TentangSayaController::class))->name('tentang-saya');
 
 Route::group(['prefix' => '/kasus-terverifikasi', 'as' => 'verified_case.'], function () {
     Route::get('/index', [VerifiedCaseController::class, 'index'])->name('index');
