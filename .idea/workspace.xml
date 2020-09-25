@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="115d7419-0794-4f20-8ca2-05ccbac4c954" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TentangSayaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TentangSayaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/bantuan.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/bantuan.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tentang-saya.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tentang-saya.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +163,7 @@
       <option name="presentableId" value="Default" />
       <updated>1600982985104</updated>
       <workItem from="1600982986465" duration="92000" />
-      <workItem from="1600983092654" duration="10447000" />
+      <workItem from="1600983092654" duration="12263000" />
     </task>
     <servers />
   </component>

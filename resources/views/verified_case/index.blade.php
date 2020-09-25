@@ -73,7 +73,7 @@
                             </button>
                         </form>
 
-                        <form class="d:i-b" method="POST" action="{{ route('verified_case.delete', $case_record->id) }}">
+                        <form class="destroy d:i-b" method="POST" action="{{ route('verified_case.delete', $case_record->id) }}">
                             @csrf
                             <button class="button is-danger is-small">
                                 <span>

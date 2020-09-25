@@ -6,6 +6,8 @@
  */
 
 require('./bootstrap');
+const Swal = require('sweetalert2')
+window.Swal = Swal
 
 window.Vue = require('vue');
 
@@ -55,3 +57,28 @@ if ($navbarBurgers.length > 0) {
     });
   });
 }
+
+window.confirmDialog = (attributes) => {
+  return Swal.fire({
+    title: `Konfirmasi`,
+    titleText: `Konfirmasi Tindakan`,
+    text: `Apakah Anda yakin ingin melakukan tindakan ini?`,
+    icon: `warning`,
+    showCancelButton: true,
+    confirmButtonText: `Ya`,
+    cancelButtonText: `Tidak`,
+    ...attributes,
+  })
+}
+
+jQuery(function () {
+  $("form.destroy").submit(function (e) {
+    e.preventDefault()
+    window.confirmDialog()
+        .then(isOk => {
+          if (isOk) {
+            $(this).off("submit").submit()
+          }
+        })
+  })
+})

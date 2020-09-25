@@ -49,7 +49,7 @@
                         @endif
                     </td>
                     @endforeach
-                    
+
                     <td class="has-text-centered" style="vertical-align: middle"> {{ $case_record->diagnosis }} </td>
 
                     <td class="has-text-centered" style="vertical-align: middle">
@@ -84,7 +84,7 @@
                             </button>
                         </form>
 
-                        <form class="d:i-b" method='POST' action='{{ route('unverified_case.delete', $case_record->id) }}'>
+                        <form class="destroy d:i-b" method='POST' action='{{ route('unverified_case.delete', $case_record->id) }}'>
                             @csrf
                             <button class="button is-danger is-small">
                                 <span>
