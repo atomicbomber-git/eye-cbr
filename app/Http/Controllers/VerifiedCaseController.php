@@ -82,35 +82,39 @@ class VerifiedCaseController extends Controller
                 'message_state' => 'success'
             ]);
     }
-    
+
     public function edit(Kasus $case_record)
     {
         $case_record->load('case_record_features:id,feature_id,case_record_id,value');
 
         $case_record = (object) [
             'id' => $case_record->id,
-            'verified' => $case_record->verified,
             'diagnosis' => $case_record->diagnosis,
+            'verified' => $case_record->verified,
+            'solution' => $case_record->solution,
             'case_record_features' => $case_record->case_record_features
                 ->mapWithKeys(function ($case_record_feature) {
                     return [$case_record_feature->feature_id => $case_record_feature->value];
                 })
         ];
 
-        $features = Gejala::select('id', 'description')->get();
+        $features = Gejala::query()
+            ->select('id', 'description')
+            ->get();
 
         return view('verified_case.edit', compact('case_record', 'features'));
     }
-    
+
     public function update(Request $request, Kasus $case_record)
     {
         $data = $this->validate(request(), [
             'diagnosis' => ['required', Rule::in(array_keys(Kasus::HASIL_DIAGNOSIS))],
+            "solution" => ["string", "max:12000"],
             'case_record_features' => 'array',
             'case_record_features.*.feature_id' => 'required|exists:features,id',
             'case_record_features.*.value' => 'nullable'
         ]);
-        
+
         DB::transaction(function () use ($data, $case_record) {
             $case_record->update(['diagnosis' => $data['diagnosis']]);
             $case_record->case_record_features()->delete();
@@ -131,7 +135,7 @@ class VerifiedCaseController extends Controller
                 'message_state' => 'success'
             ]);
     }
-    
+
     public function delete(Kasus $case_record)
     {
         DB::transaction(function () use ($case_record) {

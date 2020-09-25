@@ -32,7 +32,7 @@
                 <h2 class="title is-4"> Daftar Gejala </h2>
 
                 @foreach ($features as $feature)
-                
+
                 <input type="hidden"
                     name="case_record_features[{{ $feature->id }}][feature_id]"
                     value="{{ $feature->id }}"
@@ -54,13 +54,13 @@
                 <h2 class="title is-4 m-t:4">
                     Data Kasus
                 </h2>
-                
+
                 <div class="field">
                     <label for="diagnosis" class="label"> Hasil Diagnosis: </label>
                     <div id="diagnosis" class="select">
                         <select name="diagnosis">
                             @foreach (App\Kasus::HASIL_DIAGNOSIS as $key => $value)
-                            <option 
+                            <option
                                 {{ old('diagnosis', $case_record->diagnosis) === $key ? 'selected' : '' }}
                                 value="{{ $key }}">
                                 {{ $value }}
@@ -69,7 +69,34 @@
                         </select>
                     </div>
                 </div>
-            
+
+                <div class="field">
+                    <label class="label"
+                           for="solution"
+                    > Solusi: </label>
+                    <div class="control @error('solution') has-icons-right @enderror">
+                <textarea id="solution"
+                          name="solution"
+                          rows="5"
+                          class="textarea {{ $errors->has('solution') ? 'is-danger' : ''  }}"
+                          placeholder=""
+                >{{ old("solution", $case_record->solution) }}</textarea>
+                        @if($errors->first('solution'))
+                            <span class="icon is-small is-right">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </span>
+                        @endif
+
+                        @if($errors->first('solution'))
+                            <p class="help is-danger"> {{ $errors->first('solution') }} </p>
+                        @endif
+                    </div>
+
+                    @if($errors->first('solution'))
+                        <p class="help is-danger"> {{ $errors->first('solution') }} </p>
+                    @endif
+                </div>
+
             <div class="t-a:r">
                 <button class="button is-primary">
                     Ubah Data

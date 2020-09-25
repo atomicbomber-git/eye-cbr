@@ -63,6 +63,7 @@ class CaseRecordSeeder extends Seeder
             $case_record = Kasus::query()->create([
                 "diagnosis" => $diagnosis,
                 "verified" => 1.0,
+                "solution" => Kasus::SOLUSI_KASUS[$diagnosis] ?? null,
             ]);
 
             $features = array_map(
