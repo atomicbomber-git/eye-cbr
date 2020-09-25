@@ -27,8 +27,7 @@
         <div class="card-content">
             <form method='POST' action='{{ route('unverified_case.store') }}'>
                 @csrf
-                
-                
+
                 <h2 class="title is-4">
                     Gejala
                 </h2>

@@ -18,37 +18,48 @@
         </div>
         
         <div id="navbar" class="navbar-menu">
-            @auth
             <div class="navbar-start">
-                <a class="navbar-item" href="{{ route('verified_case.index') }}">
+                @guest
+                    <a class="navbar-item" href="{{ route('konsultasi.create') }}">
+                        <span class="icon">
+                            <i class="fa fa-circle"></i>
+                        </span>
+                            <span>
+                            Konsultasi
+                        </span>
+                    </a>
+                @endguest
+
+                @auth
+                    <a class="navbar-item" href="{{ route('verified_case.index') }}">
                     <span class="icon">
                         <i class="fa fa-archive"></i>
                     </span>
-                    <span>
+                        <span>
                         Basis Kasus
                     </span>
-                </a>
+                    </a>
 
-                <a class="navbar-item" href="{{ route('unverified_case.index') }}">
+                    <a class="navbar-item" href="{{ route('unverified_case.index') }}">
                     <span class="icon">
                         <i class="fa fa-circle"></i>
                     </span>
-                    <span>
+                        <span>
                         Kasus Baru
                     </span>
-                </a>
+                    </a>
 
-                <a class="navbar-item" href="{{ route('feature.index') }}">
+                    <a class="navbar-item" href="{{ route('feature.index') }}">
                     <span class="icon">
                         <i class="fa fa-list-alt"></i>
                     </span>
-                    <span>
+                        <span>
                         Gejala
                     </span>
-                </a>
+                    </a>
+                @endauth
             </div>
-            @endauth
-            
+
             <div class="navbar-end">
                 <div class="navbar-item">
                     @auth

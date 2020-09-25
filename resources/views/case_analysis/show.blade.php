@@ -5,23 +5,13 @@
 <div class="container p-x:5 m-y:5">
     @include('shared.message')
 
-    <h1 class="title">
-        <a href="{{ route("unverified_case.index") }}">
-            Manajemen Kasus Baru
-        </a>
-
-        /
-
-        Analisis
-    </h1>
-
     <div class="card m-b:3">
         <div class="card-header">
             <h1 class="card-header-title">
                 <span class="icon">
                     <i class="fa fa-circle"></i>
                 </span>
-                Kasus Ini
+                Hasil Konsultasi
             </h1>
         </div>
         <div class="card-content">
@@ -33,7 +23,7 @@
                     <label class="checkbox">
                         <input
                         disabled
-                        {{ $case_record->case_record_features[$feature->id] ? 'checked="checked"' : '' }}
+                        {{ $case_record->case_feature_map[$feature->id] ? 'checked="checked"' : '' }}
                         type="checkbox"
                         class="m-r:.5">
                         {{ $feature->description }}
@@ -43,6 +33,34 @@
                 @endforeach
         </div>
     </div>
+
+    <div class="card m-y:5">
+        <div class="card-header">
+            <h1 class="card-header-title">
+                <span class="icon">
+                    <i class="fa fa-list"></i>
+                </span>
+
+                Hasil Konsultasi
+            </h1>
+        </div>
+
+        <div class="card-content">
+            <p class="title is-4">
+                Diagnosis: {{ $case_record->diagnosis }}
+            </p>
+
+
+            <h4 class="title is-5">
+                Solusi:
+            </h4>
+
+            <p>
+                {{ \App\Kasus::SOLUSI_KASUS[$case_record->diagnosis] }}
+            </p>
+        </div>
+    </div>
+
 
     <div class="card">
         <div class="card-header">
@@ -62,6 +80,7 @@
                             <th colspan="{{ $features->count() }}" class="has-text-centered"> Gejala </th>
                             <th rowspan="2" style="vertical-align: middle"> Hasil Diagnosis </th>
                             <th rowspan="2" style="vertical-align: middle" class="has-text-centered"> Jarak <em> Euclidean </em> </th>
+                            <th rowspan="2" style="vertical-align: middle" class="has-text-centered"> Similaritas </th>
                         </tr>
         
                         <tr>
@@ -76,7 +95,7 @@
                             <td> {{ $loop->iteration }}. </td>
                             @foreach($features as $feature)
                             <td class="v-a:m">
-                                @if($case_record["case_record_features"][$feature->id]["value"])
+                                @if($case_record["case_feature_map"][$feature->id])
                                 <i class="has-text-success fa fa-check"></i>
                                 @else
                                 <i class="has-text-danger fa fa-times"></i>
@@ -85,6 +104,7 @@
                             @endforeach
                             <td class="t-a:c"> {{ $case_record["diagnosis"] }} </td>
                             <td> {{ $case_record["distance"] }} </td>
+                            <td> {{ $case_record["similarity"] }} </td>
                         </tr>
                         @endforeach
                     </tbody>

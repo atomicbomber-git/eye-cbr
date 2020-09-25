@@ -13,6 +13,7 @@
 
 use App\Http\Controllers\CaseAnalysisController;
 use App\Http\Controllers\CaseVerificationController;
+use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\UnverifiedCaseController;
 use App\Http\Controllers\VerifiedCaseController;
@@ -25,6 +26,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('konsultasi', class_basename(KonsultasiController::class))
+    ->parameter('konsultasi', 'kasus');
 
 Route::group(['prefix' => '/kasus-terverifikasi', 'as' => 'verified_case.'], function () {
     Route::get('/index', [VerifiedCaseController::class, 'index'])->name('index');
