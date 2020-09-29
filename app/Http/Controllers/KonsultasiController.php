@@ -100,7 +100,7 @@ class KonsultasiController extends Controller
         return response()->view('case_analysis.show', [
             "case_record" => $kasus,
             "case_records" => $case_records,
-            "features" => Gejala::query()->select('id', 'weight', 'description')->get()->keyBy('id')
+            "features" => Gejala::query()->select('id', 'description')->get()->keyBy('id')
         ]);
     }
 

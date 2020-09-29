@@ -39,7 +39,6 @@ class FeatureSeeder extends Seeder
         foreach (self::FEATURE_NAMES as $feature_name) {
             Gejala::query()->create([
                 "description" => $feature_name,
-                "weight" => 1.0,
             ]);
         }
 

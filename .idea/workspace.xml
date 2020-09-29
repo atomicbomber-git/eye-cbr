@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="115d7419-0794-4f20-8ca2-05ccbac4c954" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KonsultasiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/KonsultasiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Kasus.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Kasus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_02_15_163416_create_features_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_02_15_163416_create_features_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/FeatureSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/FeatureSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +145,7 @@
     <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/konsultasi" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../personal-blog" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -164,6 +171,8 @@
       <updated>1600982985104</updated>
       <workItem from="1600982986465" duration="92000" />
       <workItem from="1600983092654" duration="12263000" />
+      <workItem from="1601018329678" duration="4895000" />
+      <workItem from="1601377700314" duration="1495000" />
     </task>
     <servers />
   </component>
@@ -187,21 +196,29 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="728" y="182" width="454" height="668" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1/0.0.1920.1040@0.0.1920.1040" timestamp="1600989591725" />
+    <state x="641" y="94" width="627" height="844" key="Diagram.Print.Preview.Dialog" timestamp="1601026958485">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="641" y="94" width="627" height="844" key="Diagram.Print.Preview.Dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601026958485" />
+    <state x="690" y="220" width="530" height="592" key="FileChooserDialogImpl" timestamp="1601032492126">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="220" width="530" height="592" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601032492126" />
     <state x="339" y="66" key="SettingsEditor" timestamp="1600989403459">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="339" y="66" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1600989403459" />
-    <state x="621" y="193" width="675" height="655" key="StructurePopup" timestamp="1600989506837">
+    <state x="621" y="193" width="789" height="655" key="StructurePopup" timestamp="1601025781917">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="621" y="193" width="675" height="655" key="StructurePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1600989506837" />
-    <state x="540" y="234" key="run.anything.popup" timestamp="1600990311095">
+    <state x="621" y="193" width="789" height="655" key="StructurePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1601025781917" />
+    <state x="540" y="234" key="run.anything.popup" timestamp="1601026713351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="540" y="234" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600990311095" />
-    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1600994747222">
+    <state x="540" y="234" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601026713351" />
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1601378042281">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600994747222" />
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601378042281" />
   </component>
 </project>

@@ -64,13 +64,27 @@ class Kasus extends Model
             ->map(function (Kasus $verified_case) {
                 $verified_case->loadCaseFeaturesMap();
 
+                $similar_count = 0;
+
                 $sum = 0;
+                $sim_sum = 0;
+
                 foreach ($this->case_feature_map as $feature_id => $value) {
+
+                    $both_exists = (1 === $value) && (1 === $verified_case->case_feature_map[$feature_id]);
                     $sum += pow($value - $verified_case->case_feature_map[$feature_id], 2);
+
+                    $similar_count += $both_exists ? 1 : 0;
+                    if ($both_exists) {
+                        $sim_sum += pow($value - $verified_case->case_feature_map[$feature_id], 2);
+                    }
+
                 }
 
+                $ratio = $similar_count / count($this->case_feature_map);
+
                 $verified_case["distance"] = sqrt($sum);
-                $verified_case["similarity"] = 1 - sqrt($sum);
+                $verified_case["similarity"] = $ratio * (1 - sqrt($sim_sum));
 
                 return $verified_case;
             })
