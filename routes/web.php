@@ -19,12 +19,10 @@ use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\TentangSayaController;
 use App\Http\Controllers\UnverifiedCaseController;
 use App\Http\Controllers\VerifiedCaseController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return redirect()->route('konsultasi.create');
-});
-
+Route::redirect("/", "konsultasi/create");
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

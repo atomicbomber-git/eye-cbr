@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => 'SP Diagnosis Penyakit Mata',
+    'name' => 'Sistem Diagnosis Penyakit Mata',
 
     /*
     |--------------------------------------------------------------------------
