@@ -61,7 +61,7 @@ class Kasus extends Model
             ->verified()
             ->with('case_record_features:id,case_record_id,feature_id,value')
             ->get()
-            ->map(function (Kasus $verified_case) {
+            ->map(function (Kasus $verified_case, $index) {
                 $verified_case->loadCaseFeaturesMap();
 
                 $similar_count = 0;
@@ -80,7 +80,6 @@ class Kasus extends Model
                     }
 
                 }
-
                 $ratio = $similar_count / count($this->case_feature_map);
 
                 $verified_case["distance"] = sqrt($sum);

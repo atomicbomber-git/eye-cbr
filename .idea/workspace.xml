@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="115d7419-0794-4f20-8ca2-05ccbac4c954" name="Default Changelist" comment="" />
+    <list default="true" id="115d7419-0794-4f20-8ca2-05ccbac4c954" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CaseAnalysisController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CaseAnalysisController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Kasus.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Kasus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/case_analysis/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/case_analysis/show.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +18,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -179,44 +192,12 @@
       <workItem from="1600982986465" duration="92000" />
       <workItem from="1600983092654" duration="12263000" />
       <workItem from="1601274441143" duration="656000" />
+      <workItem from="1608712490981" duration="493000" />
+      <workItem from="1610115031679" duration="231000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="555" y="174" width="800" height="683" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600983419536">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="555" y="174" width="800" height="683" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600983419536" />
-    <state x="657" y="0" width="596" height="1034" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1600988656828">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="657" y="0" width="596" height="1034" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600988656828" />
-    <state x="627" y="220" width="655" height="592" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600994322288">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="627" y="220" width="655" height="592" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600994322288" />
-    <state x="728" y="182" width="454" height="668" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1" timestamp="1600989591725">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="728" y="182" width="454" height="668" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1/0.0.1920.1040@0.0.1920.1040" timestamp="1600989591725" />
-    <state x="339" y="66" key="SettingsEditor" timestamp="1600989403459">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="339" y="66" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1600989403459" />
-    <state x="621" y="193" width="675" height="655" key="StructurePopup" timestamp="1600989506837">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="621" y="193" width="675" height="655" key="StructurePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1600989506837" />
-    <state x="540" y="234" key="run.anything.popup" timestamp="1600990311095">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="540" y="234" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600990311095" />
-    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1601274468752">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601274468752" />
   </component>
 </project>

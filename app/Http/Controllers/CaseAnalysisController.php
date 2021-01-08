@@ -15,8 +15,8 @@ class CaseAnalysisController extends Controller
 
         return view('case_analysis.show', [
             "case_record" => $case_record,
-            "case_records" => $case_records,
-            "features" => Gejala::query()->select('id', 'weight', 'description')->get()->keyBy('id')
+//            "case_records" => $case_records,
+//            "features" => Gejala::query()->select('id', 'weight', 'description')->get()->keyBy('id')
         ]);
     }
 }
