@@ -83,7 +83,7 @@ class Kasus extends Model
                 $ratio = $similar_count / count($this->case_feature_map);
 
                 $verified_case["distance"] = sqrt($sum);
-                $verified_case["similarity"] = $ratio * (1 - sqrt($sim_sum));
+                $verified_case["similarity"] = 1 - (sqrt($sum) / sqrt(18));
 
                 return $verified_case;
             })
