@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.guest')
 @section('title', 'Analisis Kasus Baru')
 @section('content')
 

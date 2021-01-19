@@ -1,4 +1,4 @@
-@extends('shared.layout')
+@extends('layouts.admin')
 @section('title', 'Ubah Basis Kasus')
 @section('content')
 

@@ -1,4 +1,4 @@
-@extends('shared.layout')
+@extends('layouts.admin')
 @section('title', 'Daftar Gejala')
 @section('content')
 
@@ -12,8 +12,10 @@
     <div style="overflow-x:auto">
         <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth block">
             <thead>
-                <th> # </th>
-                <th> Gejala </th>
+                <tr>
+                    <th> # </th>
+                    <th> Gejala </th>
+                </tr>
             </thead>
             <tbody>
                 @foreach ($features as $feature)

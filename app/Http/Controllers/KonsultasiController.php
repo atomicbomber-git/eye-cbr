@@ -52,7 +52,21 @@ class KonsultasiController extends Controller
     public function store(Request $request)
     {
         $data = $this->validate(request(), [
-            'case_record_features' => 'array',
+            'case_record_features' => ['array', function ($attribute, $value, $fail) {
+                $selected_count = collect($value)
+                    ->filter(function ($case_record_feature) {
+                        return isset($case_record_feature["value"]);
+                    })->count();
+
+                if (($selected_count < 3) || ($selected_count > 5)) {
+                    $fail(
+                        sprintf("Jumlah gejala yang dipilih harus berada di antara %s dan %s",
+                            3,
+                            5
+                        )
+                    );
+                }
+            }],
             'case_record_features.*.feature_id' => 'required|exists:features,id',
             'case_record_features.*.value' => 'nullable'
         ]);
@@ -97,7 +111,7 @@ class KonsultasiController extends Controller
         $kasus->load('case_record_features:id,case_record_id,feature_id,value');
         $case_records = $kasus->getClosestCaseRecords();
 
-        return response()->view('case_analysis.show', [
+        return response()->view('konsultasi-result.show', [
             "case_record" => $kasus,
             "case_records" => $case_records,
             "features" => Gejala::query()->select('id', 'description')->get()->keyBy('id')

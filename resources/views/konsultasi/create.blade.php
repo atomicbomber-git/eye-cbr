@@ -1,4 +1,4 @@
-@extends("shared.layout")
+@extends('layouts.guest')
 
 @section("content")
     <div class="container p-x:5 m-y:5">
@@ -22,6 +22,14 @@
                         Gejala
                     </h2>
 
+                    @error("case_record_features")
+                        <article class="message is-danger">
+                            <div class="message-body">
+                                {{ $message }}
+                            </div>
+                        </article>
+                    @enderror
+
                     @foreach ($features as $feature)
 
                         <input type="hidden"
@@ -32,6 +40,7 @@
                         <div class="field">
                             <label class="checkbox">
                                 <input
+                                        {{ old("case_record_features.$feature->id.value") === "on" ? "checked" : "" }}
                                         name="case_record_features[{{ $feature->id }}][value]"
                                         type="checkbox"
                                         class="m-r:.5">
