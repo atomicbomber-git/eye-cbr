@@ -20,6 +20,15 @@
         <div id="navbar" class="navbar-menu">
             <div class="navbar-start">
                 @guest
+                    <a class="navbar-item" href="{{ route('home') }}">
+                        <span class="icon">
+                            <i class="fa fa-home"></i>
+                        </span>
+                        <span>
+                            Home
+                        </span>
+                    </a>
+
                     <a class="navbar-item" href="{{ route('konsultasi.create') }}">
                         <span class="icon">
                             <i class="fa fa-check-circle-o"></i>

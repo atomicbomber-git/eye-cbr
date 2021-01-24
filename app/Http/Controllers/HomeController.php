@@ -3,26 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\ResponseFactory;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    private ResponseFactory $responseFactory;
+
+    public function __construct(ResponseFactory $responseFactory)
     {
-        $this->middleware('auth');
+        $this->responseFactory = $responseFactory;
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
+    public function __invoke()
     {
-        return view('home');
+        return $this->responseFactory->view("home");
     }
 }

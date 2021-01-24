@@ -2,31 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="115d7419-0794-4f20-8ca2-05ccbac4c954" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/guest.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/shared/navbar-admin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KonsultasiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/KonsultasiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/bantuan.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/bantuan.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/case_analysis/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/case_analysis/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/feature/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/feature/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/konsultasi/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/konsultasi/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/konsultasi/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/konsultasi/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/konsultasi/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/konsultasi/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shared/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shared/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tentang-saya.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tentang-saya.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/unverified_case/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/unverified_case/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/unverified_case/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/unverified_case/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/unverified_case/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/unverified_case/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/verified_case/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/verified_case/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/verified_case/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/verified_case/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/verified_case/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/verified_case/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/shared/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shared/navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,13 +169,14 @@
     <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/shared" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/konsultasi.blade.php" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/konsultasi.blade.php" />
       <recent name="$PROJECT_DIR$/resources/views/shared" />
       <recent name="$PROJECT_DIR$/resources/views/layouts" />
       <recent name="$PROJECT_DIR$/resources/views/konsultasi" />
@@ -246,7 +227,10 @@
       <workItem from="1608712490981" duration="493000" />
       <workItem from="1610115031679" duration="231000" />
       <workItem from="1610115770169" duration="605000" />
-      <workItem from="1611054675106" duration="3463000" />
+      <workItem from="1611054675106" duration="4702000" />
+      <workItem from="1611109836962" duration="1767000" />
+      <workItem from="1611383754767" duration="1238000" />
+      <workItem from="1611508225570" duration="3056000" />
     </task>
     <servers />
   </component>

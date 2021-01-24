@@ -14,6 +14,7 @@
 use App\Http\Controllers\BantuanController;
 use App\Http\Controllers\CaseAnalysisController;
 use App\Http\Controllers\CaseVerificationController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\TentangSayaController;
@@ -30,6 +31,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('konsultasi', class_basename(KonsultasiController::class))
     ->parameter('konsultasi', 'kasus');
 
+Route::get('home', class_basename(HomeController::class))->name('home');
 Route::get('bantuan', class_basename(BantuanController::class))->name('bantuan');
 Route::get('tentang-saya', class_basename(TentangSayaController::class))->name('tentang-saya');
 
