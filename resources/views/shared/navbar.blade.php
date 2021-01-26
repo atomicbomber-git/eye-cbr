@@ -19,7 +19,6 @@
         
         <div id="navbar" class="navbar-menu">
             <div class="navbar-start">
-                @guest
                     <a class="navbar-item" href="{{ route('home') }}">
                         <span class="icon">
                             <i class="fa fa-home"></i>
@@ -55,39 +54,22 @@
                             Tentang Saya
                         </span>
                     </a>
-                @endguest
-
-                @auth
-                    <a class="navbar-item" href="{{ route('verified_case.index') }}">
-                    <span class="icon">
-                        <i class="fa fa-archive"></i>
-                    </span>
-                        <span>
-                        Basis Kasus
-                    </span>
-                    </a>
-
-                    <a class="navbar-item" href="{{ route('unverified_case.index') }}">
-                    <span class="icon">
-                        <i class="fa fa-circle"></i>
-                    </span>
-                        <span>
-                        Kasus Baru
-                    </span>
-                    </a>
-
-                    <a class="navbar-item" href="{{ route('feature.index') }}">
-                    <span class="icon">
-                        <i class="fa fa-list-alt"></i>
-                    </span>
-                        <span>
-                        Gejala
-                    </span>
-                    </a>
-                @endauth
             </div>
 
             <div class="navbar-end">
+                @auth
+
+                <a class="navbar-item" href="{{ route('admin-home') }}">
+                    <span class="icon">
+                        <i class="fa fa-user"></i>
+                    </span>
+                    <span>
+                        Website Administrator
+                    </span>
+                </a>
+
+                @endauth
+
                 <div class="navbar-item">
                     @auth
                     <form action="{{ route('logout') }}" method="POST">

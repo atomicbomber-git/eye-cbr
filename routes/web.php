@@ -11,6 +11,7 @@
 |
 */
 
+use App\Http\Controllers\AdminHomeController;
 use App\Http\Controllers\BantuanController;
 use App\Http\Controllers\CaseAnalysisController;
 use App\Http\Controllers\CaseVerificationController;
@@ -23,10 +24,9 @@ use App\Http\Controllers\VerifiedCaseController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::redirect("/", "konsultasi/create");
+Route::redirect("/", "/home");
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('konsultasi', class_basename(KonsultasiController::class))
     ->parameter('konsultasi', 'kasus');
@@ -34,6 +34,8 @@ Route::resource('konsultasi', class_basename(KonsultasiController::class))
 Route::get('home', class_basename(HomeController::class))->name('home');
 Route::get('bantuan', class_basename(BantuanController::class))->name('bantuan');
 Route::get('tentang-saya', class_basename(TentangSayaController::class))->name('tentang-saya');
+Route::get('admin-home', class_basename(AdminHomeController::class))->name('admin-home');
+
 
 Route::group(['prefix' => '/kasus-terverifikasi', 'as' => 'verified_case.'], function () {
     Route::get('/index', [VerifiedCaseController::class, 'index'])->name('index');

@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="115d7419-0794-4f20-8ca2-05ccbac4c954" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminHomeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin-home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/bantuan.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/bantuan.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/shared/navbar-admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shared/navbar-admin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/shared/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shared/navbar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -169,17 +172,18 @@
     <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/konsultasi.blade.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Controllers" />
+      <recent name="$PROJECT_DIR$/resources/views" />
       <recent name="$PROJECT_DIR$/resources/views/konsultasi.blade.php" />
       <recent name="$PROJECT_DIR$/resources/views/shared" />
       <recent name="$PROJECT_DIR$/resources/views/layouts" />
-      <recent name="$PROJECT_DIR$/resources/views/konsultasi" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/layouts" />
@@ -193,6 +197,9 @@
     <configuration name="phpunit.xml" type="PestRunConfigurationType">
       <option name="pestRunnerSettings">
         <PestRunner scope="ConfigurationFile" />
+      </option>
+      <option name="runnerSettings">
+        <PhpTestRunnerSettings scope="ConfigurationFile" />
       </option>
       <method v="2" />
     </configuration>
@@ -231,6 +238,8 @@
       <workItem from="1611109836962" duration="1767000" />
       <workItem from="1611383754767" duration="1238000" />
       <workItem from="1611508225570" duration="3056000" />
+      <workItem from="1611646659933" duration="236000" />
+      <workItem from="1611674203132" duration="1488000" />
     </task>
     <servers />
   </component>

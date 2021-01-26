@@ -19,8 +19,6 @@
                     <li> Pada menu Tentang Saya terdapat biodata singkat tentang pengembang sistem. </li>
                     <li> Sistem diagnosis penyakit mata ini adalah berdasarkan 18 gejala-gejala yang tampak pada pasien. Jika pertanyaan tersebut kurang cukup mewakili gejala-gejala pasien atau penderita penyakit mata, silahkan konsultasikan lebih lanjut ke Rumah Sakit atau Klinik khusus pengobatan penyakit mata. </li>
                 </ol>
-
-
             </div>
         </div>
     </div>

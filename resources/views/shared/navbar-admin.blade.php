@@ -50,6 +50,15 @@
             </div>
 
             <div class="navbar-end">
+                <a class="navbar-item" href="{{ route('home') }}">
+                    <span class="icon">
+                        <i class="fa fa-user"></i>
+                    </span>
+                    <span>
+                        Website Umum
+                    </span>
+                </a>
+
                 <div class="navbar-item">
                     @auth
                     <form action="{{ route('logout') }}" method="POST">
