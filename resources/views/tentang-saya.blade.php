@@ -3,7 +3,7 @@
 @section("content")
     <div class="container p-x:5 m-y:5">
         <h1 class="title is6">
-            Tentang Saya
+            Tentang Pengembang Sistem
         </h1>
 
         <div class="card">

@@ -3,14 +3,11 @@
 @section("content")
     <div class="container p-x:5 m-y:5">
         <h1 class="title">
-            Bantuan
+            Panduan Penggunaan
         </h1>
 
         <div class="card">
             <div class="card-content">
-                <div>
-
-                </div>
 
                 <ol style="margin-left: 1rem">
                     <li> Pada menu Home terdapat halaman utama pengunjung. </li>

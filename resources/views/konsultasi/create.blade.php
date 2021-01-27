@@ -11,7 +11,7 @@
         <div class="card">
             <div class="card-header">
                 <h1 class="card-header-title">
-                    Form Konsultasi
+                    Silakan Lakukan Konsultasi
                 </h1>
             </div>
             <div class="card-content">
@@ -39,6 +39,9 @@
 
                         <div class="field">
                             <label class="checkbox">
+                                <span style="display: inline-block; width: 2rem">
+                                    F{{ $loop->iteration }}
+                                </span>
                                 <input
                                         {{ old("case_record_features.$feature->id.value") === "on" ? "checked" : "" }}
                                         name="case_record_features[{{ $feature->id }}][value]"
