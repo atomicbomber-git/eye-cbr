@@ -60,7 +60,7 @@ class KonsultasiController extends Controller
 
                 if (($selected_count < 3) || ($selected_count > 5)) {
                     $fail(
-                        sprintf("Jumlah gejala yang dipilih harus berada di antara %s dan %s",
+                        sprintf("Pilihlah gejala yang anda alami, minimal %s-%s gejala.",
                             3,
                             5
                         )
