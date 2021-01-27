@@ -1,12 +1,12 @@
 @extends('layouts.admin')
-@section('title', 'Manajemen Kasus Baru')
+@section('title', 'Kelola Kasus Baru')
 @section('content')
 
 <div class="container p-x:5 m-y:5">
     @include('shared.message')
 
     <h1 class="title">
-        Manajemen Kasus Baru
+        Kelola Kasus Baru
     </h1>
 
     <div class="t-a:r m-y:3">

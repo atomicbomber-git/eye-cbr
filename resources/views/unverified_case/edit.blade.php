@@ -7,7 +7,7 @@
 
     <h1 class="title">
         <a href="{{ route("unverified_case.index") }}">
-            Manajemen Kasus Baru
+            Kelola Kasus Baru
         </a>
 
         /

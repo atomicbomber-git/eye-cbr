@@ -7,7 +7,7 @@
     
     <h1 class="title">
         <a href="{{ route("verified_case.index") }}">
-            Manajemen Basis Kasus
+            Kelola Basis Kasus
         </a>
 
         /
