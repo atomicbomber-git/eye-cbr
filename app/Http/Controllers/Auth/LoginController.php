@@ -33,7 +33,7 @@ class LoginController extends Controller
     // Route to go to after log in
     public function redirectTo()
     {
-        return route('verified_case.index');
+        return route('admin-home');
     }
 
     public function loggedOut()
