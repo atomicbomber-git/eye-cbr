@@ -20,6 +20,15 @@
         <div id="navbar" class="navbar-menu">
             <div class="navbar-start">
                 @auth
+                    <a class="navbar-item" href="{{ route('admin-home') }}">
+                    <span class="icon">
+                        <i class="fa fa-home"></i>
+                    </span>
+                        <span>
+                        Home
+                    </span>
+                    </a>
+
                     <a class="navbar-item" href="{{ route('verified_case.index') }}">
                     <span class="icon">
                         <i class="fa fa-archive"></i>
