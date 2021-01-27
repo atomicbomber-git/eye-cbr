@@ -6,7 +6,7 @@
                     <i class="fa fa-icon"></i>
                 </span>
                 <span>
-                    {{ config('app.name') }} (ADMIN)
+                    {{ config('app.name') }}
                 </span>
             </a>
 
