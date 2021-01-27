@@ -1,4 +1,4 @@
-<nav class="navbar is-danger has-shadow" role="navigation" aria-label="main navigation">
+<nav class="navbar is-info has-shadow" role="navigation" aria-label="main navigation">
     <div class="container">
         <div class="navbar-brand">
             <a class="navbar-item">
@@ -50,6 +50,7 @@
             </div>
 
             <div class="navbar-end">
+                @auth
                 <a class="navbar-item" href="{{ route('home') }}">
                     <span class="icon">
                         <i class="fa fa-user"></i>
@@ -58,6 +59,7 @@
                         Website Umum
                     </span>
                 </a>
+                @endauth
 
                 <div class="navbar-item">
                     @auth
